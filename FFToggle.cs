@@ -10,8 +10,8 @@ using Exiled.API.Features.Core.Generic;
 using Exiled.API.Features.Items;
 using Exiled.API.Interfaces;
 using Exiled.Events.EventArgs.Server;
-using Exiled.Events.Handlers;
 using PluginAPI.Events;
+
 
 
 namespace FFToggle
@@ -39,13 +39,12 @@ namespace FFToggle
         public void RoundEndedEvent(RoundEndedEventArgs ev)
         {
             Exiled.API.Features.Server.FriendlyFire = true;
-            foreach (Exiled.API.Features.Player player in Exiled.API.Features.Player.List.Where(x => x.IsAlive))
+            foreach (Player player in Player.List.Where(x => x.IsAlive))
             {
                 Log.Warn("Видано предмет живим гравцям!");
                 player.AddItem(ItemType.Jailbird);
             }
         }
-
     }
 }
 
