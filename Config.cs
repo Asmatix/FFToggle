@@ -14,6 +14,6 @@ namespace FFToggle
         public bool IsEnabled { get; set; } = true;
 
         [Description("Whether or not to enable FFToggle debug logs.")]
-        public bool Debug { get; set; } = false;
+        public bool Debug { get; set; } = true;
     }
 }

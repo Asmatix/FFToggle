@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using Exiled.API.Features;
-using Exiled.API.Features.Core.Generic;
-using Exiled.API.Features.Items;
-using Exiled.API.Interfaces;
+﻿using Exiled.API.Features;
 using Exiled.Events.EventArgs.Server;
-using PluginAPI.Events;
+using MEC;
+using System.Collections.Generic;
+using System.Linq;
 
 
 
@@ -41,7 +33,7 @@ namespace FFToggle
             Exiled.API.Features.Server.FriendlyFire = true;
             foreach (Player player in Player.List.Where(x => x.IsAlive))
             {
-                Log.Warn("Видано предмет живим гравцям!");
+                Log.Warn("Выдан предмет живым игрокам!");
                 player.AddItem(ItemType.Jailbird);
             }
         }
